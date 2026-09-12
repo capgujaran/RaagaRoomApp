@@ -19,13 +19,17 @@
     manasilayo:{title:'Manasilayo',heading:'ಮನಸ್ಸಿಲಾಯೋ',lang:'kn',language:'Kannada lyrics',subtitle:'Scroll at your own pace.',versions:{
       karaoke:{audio:$('audio-manasilayo-karaoke'),label:'Karaoke',duration:233.88,offset:0},
       original:{audio:$('audio-manasilayo-original'),label:'Original',duration:235.676735,offset:-0.062086}
+    }},
+    'na-na-re':{title:'Na Na Na Na Na Re',heading:'Na Na Na Na Na Re',lang:'hi-Latn',language:'Roman-script lyrics',subtitle:'Karaoke with chorus',versions:{
+      karaoke:{audio:$('audio-na-na-re-karaoke'),label:'Karaoke',duration:252.504,offset:0,bytes:4040493,
+        parts:Array.from({length:7},(_,i)=>`assets/audio/na-na-re/part-${String(i+1).padStart(2,'0')}.bin`)}
     }}
   };
   const allTracks=Object.values(songs).flatMap(song=>Object.values(song.versions));
   const versions=Object.fromEntries(Object.keys(songs).map(id=>[id,'karaoke']));
   const radios=Array.from(document.querySelectorAll('input[name="version"]'));
   const seek=$('seek'),play=$('play'),error=$('error');
-  const pendingPositions=new Map(),playedSongs=new Set();
+  const pendingPositions=new Map(),playedSongs=new Set(),sourceLoads=new Map();
   let selectedSong=null,currentView='home',currentRoute=null,seeking=false,wakeLock=null;
   let playIntent=false,loading=false,switching=false,requestId=0;
   let lyricSize=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--lyric-size'))||20;
@@ -38,6 +42,29 @@
   const format=seconds=>`${Math.floor(Math.max(0,seconds)/60)}:${String(Math.floor(Math.max(0,seconds)%60)).padStart(2,'0')}`;
   const playIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 12 8-12 8z" fill="currentColor" stroke="none"/></svg>';
   const pauseIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke-width="4"/></svg>';
+
+  function prepareSource(media){
+    const version=allTracks.find(t=>t.audio===media);
+    if(!version.parts)return Promise.resolve();
+    const state=sourceLoads.get(media)||{};
+    if(state.url)return Promise.resolve();
+    if(state.promise)return state.promise;
+    sourceLoads.set(media,state);
+    // Fetch in parallel; Promise.all retains file order when joining the MP3.
+    state.promise=Promise.all(version.parts.map(async path=>{
+      const response=await fetch(path);
+      if(!response.ok)throw new Error('Audio download failed');
+      return response.arrayBuffer();
+    })).then(parts=>{
+      if(parts.reduce((bytes,part)=>bytes+part.byteLength,0)!==version.bytes)throw new Error('Incomplete audio download');
+      const position=positionOf(media);
+      const url=URL.createObjectURL(new Blob(parts,{type:'audio/mpeg'}));
+      // Loading a new source resets its clock; restore any seek after metadata.
+      pendingPositions.set(media,position);
+      media.src=url;media.load();state.url=url;
+    }).catch(cause=>{state.promise=null;throw cause;});
+    return state.promise;
+  }
 
   function setSize(value){
     lyricSize=clamp(value,18,30);
@@ -72,7 +99,7 @@
     play.setAttribute('aria-label',playing?'Pause music':finished(media)?'Replay music':'Play music');
     $('song-title').textContent=`${songs[selectedSong].title} · ${track().label}`;
     $('now-playing-open').setAttribute('aria-label',`Open ${songs[selectedSong].title} lyrics`);
-    $('play-state').textContent=loading?'Starting music…':playing?'Playing · your music stays with you':finished(media)?'Song finished · tap to replay':positionOf(media)>0?'Paused · tap to continue':'Tap play to sing along';
+    $('play-state').textContent=loading?(track().parts&&!sourceLoads.get(media)?.url?'Loading music…':'Starting music…'):playing?'Playing · your music stays with you':finished(media)?'Song finished · tap to replay':positionOf(media)>0?'Paused · tap to continue':'Tap play to sing along';
     document.querySelectorAll('[data-song]').forEach(card=>{
       const chosen=card.dataset.song===selectedSong;
       card.classList.toggle('is-current',chosen);
@@ -84,15 +111,19 @@
   async function startMusic(){
     const media=active();if(!media)return;
     const id=++requestId;playIntent=true;loading=true;error.hidden=true;
-    // Invoke play directly in the user gesture, without rebuilding the player.
     try{
+      // Existing and cached sources keep play inside the original user gesture.
+      if(track().parts&&!sourceLoads.get(media)?.url){
+        updatePlayback();await prepareSource(media);
+        if(id!==requestId||media!==active()||!playIntent)return;
+      }
       const promise=media.play();updatePlayback();await promise;
       if(media!==active()||!playIntent)media.pause();
       if(id===requestId){loading=false;updatePlayback();}
     }catch(_){
       if(id!==requestId)return;
       playIntent=false;loading=false;updatePlayback();
-      error.textContent='Tap Play to continue. If you are viewing this inside another app, open Raaga Room in your browser.';error.hidden=false;
+      error.textContent=track().parts&&!sourceLoads.get(media)?.url?'Music could not load. Check your connection and tap Play to retry.':'Tap Play to continue. If you are viewing this inside another app, open Raaga Room in your browser.';error.hidden=false;
     }
   }
   function pauseMusic(){
@@ -133,6 +164,7 @@
     $('song-language').textContent=song.language;$('song-subtitle').textContent=song.subtitle;
     Object.keys(songs).forEach(key=>$('reader-'+key).hidden=key!==id);
     updateVersionControls();updateTime();updatePlayback();updateMediaMetadata();
+    if(track().parts)prepareSource(active()).catch(()=>{});
     if(resume)startMusic();
   }
   function normalizedRoute(value){
@@ -210,4 +242,3 @@
   // Reading and page navigation leave every persistent audio source intact.
   setSize(lyricSize);renderRoute(window.location.hash.slice(1));
 })();
-
