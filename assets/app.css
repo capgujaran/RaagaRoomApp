@@ -1,0 +1,123 @@
+@font-face{font-family:Kannada;src:url("fonts/NotoSansKannada-Regular.ttf") format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:Kannada;src:url("fonts/NotoSansKannada-Bold.ttf") format('truetype');font-weight:700;font-display:swap}
+@font-face{font-family:Devanagari;src:url("fonts/NotoSans-Regular.ttf") format('truetype');font-weight:400;font-display:swap}
+:root{color-scheme:dark;--bg:#101c2d;--panel:#17273c;--ink:#f8f2e8;--muted:#a9b7c9;--gold:#f0ca85;--line:#2c3c51;--lyric-size:21px;--radius:20px}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 10% 0%,#243b50 0,transparent 58%),var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+button,input{font:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+button:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:3px solid #a0d5fa;outline-offset:4px}
+button:disabled{cursor:default;opacity:.35}
+button svg,.ui-icon{width:22px;height:22px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+button{color:inherit}
+.app{max-width:920px;height:100%;height:100dvh;margin:auto;display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);position:relative;background:#101c2d80}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 22px;border-bottom:1px solid #afc4db14}
+.brand-button{display:flex;align-items:center;gap:10px;min-height:44px;background:none;border:0;padding:0;text-align:left}
+.brand-mark{width:34px;height:34px;display:grid;place-items:center;background:var(--gold);border-radius:11px;color:var(--bg)}
+.brand-mark svg{width:23px;height:23px}
+.brand-name{font-size:16px;font-weight:720;letter-spacing:-.35px}
+.brand-name span{color:var(--gold)}
+.top-nav{background:#ffffff05;border:1px solid var(--line);border-radius:100px;min-height:42px;padding:0 14px;display:flex;gap:8px;align-items:center;font-size:12px;font-weight:600}
+.top-nav svg{width:17px;height:17px}
+.workspace{min-width:0;min-height:0;position:relative;overflow:hidden}
+.page-scroll{height:100%;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#556c88 transparent}
+.home-page{padding:32px 24px 28px}
+.hero{display:grid;gap:25px;align-items:center}
+.eyebrow{display:flex;gap:8px;align-items:center;font-size:10px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin:0 0 16px}
+.eyebrow::before{content:"";height:1px;width:23px;background:var(--gold);opacity:.8}
+h1,h2,p{margin-top:0}
+.hero h1{font-size:clamp(38px,9.7vw,60px);line-height:1.08;font-weight:650;letter-spacing:-1.8px;margin-bottom:17px;max-width:510px}
+.hero h1 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;color:var(--gold)}
+.hero-description{font-size:14px;line-height:1.8;max-width:370px;color:var(--muted);margin-bottom:24px}
+.primary-button{min-height:50px;border:0;background:var(--gold);color:#172133;border-radius:13px;padding:0 20px;font-size:14px;font-weight:720;display:inline-flex;align-items:center;justify-content:center;gap:22px;box-shadow:0 8px 25px #0208122b}
+.hero-art{position:relative;min-height:192px;border:1px solid #68809540;border-radius:var(--radius);overflow:hidden;background:radial-gradient(ellipse at 85% 25%,#385063,transparent 68%),linear-gradient(135deg,#20364a,#142435);display:flex;align-items:center;justify-content:center}
+.hero-art svg{width:100%;height:192px;display:block}
+.art-caption{position:absolute;left:18px;bottom:15px;color:#f4e7cfb3;font-size:9px;text-transform:uppercase;letter-spacing:2px}
+.home-footnote{display:flex;justify-content:center;align-items:center;gap:9px;font-size:10px;letter-spacing:.3px;color:var(--muted);margin:23px 0 0;line-height:1.6}
+.home-footnote span{width:3px;height:3px;border-radius:50%;background:var(--gold)}
+.playlist-page{padding:28px 24px 30px}
+.page-intro{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:24px}
+.page-intro .eyebrow{margin-bottom:9px}
+.page-intro h1{font-size:32px;font-weight:650;letter-spacing:-1px;line-height:1.15;margin:0}
+.song-count{font-size:11px;color:var(--muted);white-space:nowrap;padding-bottom:5px}
+.playlist-description{font-size:13px;color:var(--muted);line-height:1.7;margin:-9px 0 21px;max-width:420px}
+.song-list{display:grid;gap:14px;padding:0;margin:0;list-style:none}
+.song-card{width:100%;min-height:116px;padding:15px;display:grid;grid-template-columns:66px minmax(0,1fr) 24px;gap:15px;align-items:center;text-align:left;border:1px solid var(--line);border-radius:17px;background:linear-gradient(130deg,#1b2c43,#142337);transition:border-color .18s,background .18s}
+.song-card:hover{border-color:#b99b697a;background:#21344c}
+.song-card.is-current{border-color:#f0ca8580;background:#21344c}
+.song-art{width:66px;height:82px;position:relative;overflow:hidden;border-radius:11px;display:grid;place-items:center;isolation:isolate}
+.song-art::before{content:"";width:93px;height:93px;border:1px solid #f6d79e60;border-radius:50%;position:absolute;left:12px;top:18px;box-shadow:0 0 0 8px #f6d79e10,0 0 0 16px #f6d79e0a;z-index:-1}
+.song-art.kalyani{background:linear-gradient(145deg,#426877,#1e394e);color:#f2d098}
+.song-art.mere{background:linear-gradient(145deg,#a36950,#5a3e40);color:#fbe0a4}
+.song-art.jane{background:linear-gradient(145deg,#647752,#283f3a);color:#f5e6b3}
+.song-art.aa{background:linear-gradient(145deg,#866488,#443b62);color:#ffe0bb}
+.song-art.manasilayo{background:linear-gradient(145deg,#ad7545,#643d36);color:#ffe9b1}
+.song-art.manasilayo .art-letter{font-family:Kannada,serif;font-style:normal;font-size:31px;padding-top:8px}
+.song-art .art-letter{font-size:35px;font-family:Georgia,serif;font-style:italic;line-height:1}
+.song-art.kalyani .art-letter{font-family:Kannada,serif;font-style:normal;font-size:31px;padding-top:8px}
+.song-number{font-size:9px;letter-spacing:1.5px;color:var(--gold);display:block;margin-bottom:5px;text-transform:uppercase}
+.card-title{display:block;font-size:17px;line-height:1.35;font-weight:650;letter-spacing:-.25px}
+.card-language{display:block;color:var(--muted);font-size:11px;line-height:1.6;margin-top:5px}
+.card-version{display:block;color:#c8d3df;font-size:10px;margin-top:3px;line-height:1.5}
+.card-arrow{color:var(--gold);width:20px!important}
+.playlist-note{font-size:11px;color:var(--muted);line-height:1.8;text-align:center;margin:24px 16px 0}
+.song-view{height:100%;min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr)}
+.song-header{padding:17px 24px 13px;border-bottom:1px solid var(--line)}
+.song-kicker{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:7px}
+#song-language{font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold)}
+.back-link{display:inline-flex;align-items:center;gap:4px;border:0;background:transparent;color:var(--muted);font-size:11px;min-height:32px;padding:0 3px}
+.back-link svg{width:14px;height:14px}
+.song-heading-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#song-heading{font-size:clamp(23px,6.4vw,35px);font-weight:650;line-height:1.35;letter-spacing:-.7px;margin:0;min-width:0;overflow-wrap:break-word}
+#song-heading:lang(kn){font-family:Kannada,system-ui,sans-serif;letter-spacing:0}
+#song-heading:lang(hi){font-family:Devanagari,system-ui,sans-serif;letter-spacing:0}
+#song-subtitle{font-size:11px;line-height:1.6;color:var(--muted);margin:5px 0 0}
+.text-size{display:flex;gap:5px;align-items:center;flex-shrink:0}
+.icon-button{background:#ffffff03;color:var(--muted);border:1px solid var(--line);border-radius:10px;min-width:40px;min-height:44px;display:grid;place-items:center;padding:7px}
+.size-button{font-weight:600;font-size:14px}
+.lyric-scroll{min-height:0;height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;touch-action:pan-y pinch-zoom;-webkit-overflow-scrolling:touch;padding:23px 26px 38px;scrollbar-width:thin;scrollbar-color:#526580 transparent}
+.lyric-copy{max-width:720px;margin:0 auto;font-family:Kannada,system-ui,sans-serif;font-size:var(--lyric-size);line-height:1.85;font-weight:400;overflow-wrap:break-word}
+.lyric-copy:lang(hi){font-family:Devanagari,system-ui,sans-serif;line-height:1.9}
+#song-heading:lang(hi-Latn),.lyric-copy:lang(hi-Latn){font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.lyric-copy:lang(hi-Latn){line-height:1.75}
+.stanza{margin:0 0 25px}
+.stanza:last-child{margin-bottom:0}
+.lyric-line{margin:0}
+.lyric-copy>.stanza:first-child .lyric-line:first-child{color:var(--gold)}
+.end-mark{height:2px;width:35px;background:var(--gold);opacity:.45;margin:28px 0 0;border-radius:2px}
+.player{min-width:0;position:relative;border-top:1px solid #4c627b80;background:#111f32;padding:10px 22px 9px;box-shadow:0 -12px 26px #09132128}
+body[data-view="home"] .player-topline,body[data-view="playlist"] .player-topline{display:none}
+.player-topline{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+fieldset.version-options{border:0;min-width:0;padding:3px;margin:0;display:inline-flex;gap:3px;background:#08132170;border-radius:10px}
+.version-option{min-height:35px;display:flex;align-items:center;gap:6px;padding:5px 9px;border:1px solid transparent;border-radius:8px;cursor:pointer;color:var(--muted);touch-action:manipulation}
+.version-option.is-selected{border-color:#f0ca8538;background:#294057;color:var(--ink)}
+.version-option:has(input:disabled){opacity:.4;cursor:default}
+.version-option input{width:14px;height:14px;margin:0;flex:none;accent-color:var(--gold)}
+.version-option strong{display:block;font-size:10px;font-weight:650;line-height:1.4}
+.version-option small{display:none}
+#version-note{font-size:9px;line-height:1.5;color:var(--muted);text-align:right;max-width:180px;margin:0 0 0 auto}
+.song-row{display:flex;align-items:center;gap:12px}
+.play-button{flex:0 0 44px;width:44px;height:44px;border:0;border-radius:50%;background:var(--gold);color:#162035;display:grid;place-items:center}
+.play-button svg{width:22px;height:22px;stroke-width:2.1}
+.song-details{flex:1;min-width:0}
+.now-playing-open{display:block;max-width:100%;min-height:24px;padding:0;border:0;background:none;text-align:left}
+.song-title{display:block;font-size:12px;font-weight:650;letter-spacing:.1px;line-height:1.6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#play-state{font-size:10px;line-height:1.7;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.restart-button{border:0;background:transparent;color:var(--muted);width:40px;height:44px;flex:none;display:grid;place-items:center;padding:8px}
+.restart-button svg{width:19px;height:19px}
+.timeline{display:flex;align-items:center;gap:9px;margin-top:1px}
+.time{font-size:10px;font-variant-numeric:tabular-nums;color:var(--muted);min-width:28px}
+#total-time{text-align:right}
+.seek-wrap{display:flex;flex:1;align-items:center;height:30px;min-width:0}
+#seek{appearance:none;-webkit-appearance:none;display:block;width:100%;height:30px;margin:0;background:linear-gradient(to right,var(--gold) 0%,var(--gold) var(--progress,0%),#354762 var(--progress,0%),#354762 100%) center / 100% 3px no-repeat;border-radius:3px;cursor:pointer;accent-color:var(--gold);touch-action:none}
+#seek::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;background:var(--gold);height:11px;width:11px;border-radius:50%;border:0;box-shadow:0 0 0 7px transparent}
+#seek::-moz-range-thumb{background:var(--gold);height:11px;width:11px;border-radius:50%;border:0}
+.error{font-size:11px;color:#ffbcb3;padding:5px 0 0;line-height:1.5}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+audio{display:none}
+@media(min-width:620px){:root{--lyric-size:25px}.app{border-left:1px solid #40536a60;border-right:1px solid #40536a60}.topbar{padding:20px 35px}.home-page{padding:52px 40px 36px}.hero{grid-template-columns:1.15fr .85fr;gap:30px;min-height:390px}.hero h1{font-size:54px}.hero-art{min-height:310px}.hero-art svg{height:310px}.home-footnote{margin-top:34px}.playlist-page{padding:42px 40px}.song-card{min-height:126px;grid-template-columns:82px minmax(0,1fr) 24px;padding:19px;gap:22px}.song-art{width:82px;height:86px}.card-title{font-size:21px}.card-language{font-size:12px}.card-version{font-size:11px}.song-header{padding:17px 38px}.lyric-scroll{padding:28px 40px 45px}.player{padding-left:35px;padding-right:35px}.version-option{min-height:38px;padding:5px 12px}.version-option strong{font-size:11px}.song-title{font-size:13px}.now-playing-open{min-height:25px}.home-footnote{font-size:11px}}
+@media(max-width:350px){.topbar{padding-left:16px;padding-right:16px}.brand-name{font-size:14px}.top-nav{padding:0 10px}.home-page,.playlist-page{padding-left:19px;padding-right:19px}.song-card{gap:10px;padding:12px;grid-template-columns:55px minmax(0,1fr) 18px}.song-art{width:55px;height:75px}.card-title{font-size:15px}.song-header{padding-left:18px;padding-right:18px}.lyric-scroll{padding-left:20px;padding-right:20px}.player{padding-left:15px;padding-right:15px}.icon-button{min-width:35px}.version-option{padding-left:7px;padding-right:7px}#version-note{max-width:93px;font-size:8px}}
+@media(max-height:680px){.topbar{padding-top:8px;padding-bottom:8px}.home-page{padding-top:25px}.hero{gap:20px}.hero-art{min-height:150px}.hero-art svg{height:150px}.song-header{padding-top:8px;padding-bottom:9px}.song-kicker{margin-bottom:1px}.player{padding-top:6px;padding-bottom:5px}.player-topline{margin-bottom:5px}.version-option{min-height:32px}.lyric-scroll{padding-top:17px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}

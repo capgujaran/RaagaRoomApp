@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101c2d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Raaga Room · Your space to sing</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-view="home">
+<main class="app" id="app" aria-label="Raaga Room music and lyrics">
+  <header class="topbar">
+    <button class="brand-button" type="button" data-route="home" aria-label="Raaga Room home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18V6l11-2v12M9 10l11-2"/><ellipse cx="5.5" cy="18.5" rx="3.5" ry="2.5"/><ellipse cx="16.5" cy="16.5" rx="3.5" ry="2.5"/></svg></span>
+      <span class="brand-name">Raaga <span>Room</span></span>
+    </button>
+    <button class="top-nav" type="button" data-route="playlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h10m4-7 4 3-4 3z"/></svg>Playlist</button>
+  </header>
+  <div class="workspace">
+    <section id="home-view" class="page-scroll home-page" aria-labelledby="home-heading">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Your space to sing</p>
+          <h1 id="home-heading" tabindex="-1">A little music.<br>A lot of <em>you.</em></h1>
+          <p class="hero-description">Your favourite songs, lyrics at your fingertips. Pick a tune, press play, and make it yours.</p>
+          <button type="button" class="primary-button" data-route="playlist">Let’s sing <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 350 270" fill="none">
+            <defs><linearGradient id="record-shine" x1="80" y1="24" x2="259" y2="239" gradientUnits="userSpaceOnUse"><stop stop-color="#72929d" stop-opacity=".34"/><stop offset=".42" stop-color="#172535"/><stop offset="1" stop-color="#07131f"/></linearGradient><linearGradient id="record-label" x1="139" y1="93" x2="211" y2="178" gradientUnits="userSpaceOnUse"><stop stop-color="#ffe0a6"/><stop offset="1" stop-color="#c9965e"/></linearGradient></defs>
+            <path d="M-20 244c62-92 69 67 137-32S191 26 253 59s62 43 121-38" stroke="#d9c090" stroke-opacity=".16" stroke-width="1.2"/>
+            <path d="M-20 232c62-92 69 67 137-32S191 14 253 47s62 43 121-38" stroke="#d9c090" stroke-opacity=".09" stroke-width="1.2"/>
+            <circle cx="178" cy="131" r="107" fill="#091523" fill-opacity=".3" transform="translate(0 6)"/>
+            <circle cx="178" cy="131" r="104" fill="url(#record-shine)" stroke="#8c9b9e" stroke-opacity=".35"/>
+            <g stroke="#8ba0a9" stroke-opacity=".12"><circle cx="178" cy="131" r="95"/><circle cx="178" cy="131" r="89"/><circle cx="178" cy="131" r="83"/><circle cx="178" cy="131" r="77"/><circle cx="178" cy="131" r="71"/><circle cx="178" cy="131" r="65"/><circle cx="178" cy="131" r="59"/></g>
+            <path d="M94 78a101 101 0 0 1 58-44" stroke="#d2d6c8" stroke-opacity=".25" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="178" cy="131" r="43" fill="url(#record-label)"/>
+            <circle cx="178" cy="131" r="35" stroke="#5a4e3d" stroke-opacity=".22"/>
+            <path d="M171 140v-22l18-4v21m-18-10 18-4" stroke="#273342" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <ellipse cx="166.5" cy="141" rx="4.5" ry="3.5" fill="#273342"/><ellipse cx="184.5" cy="136" rx="4.5" ry="3.5" fill="#273342"/>
+            <circle cx="178" cy="131" r="2" fill="#0e1b2a"/>
+            <path d="M287 48v84l-32 42" stroke="#071522" stroke-width="11" stroke-linecap="round"/><path d="M284 44v84l-32 42" stroke="#b7c2bd" stroke-width="5" stroke-linecap="round"/><path d="m252 168-11 16" stroke="#e8c989" stroke-width="9" stroke-linecap="round"/><circle cx="284" cy="45" r="9" fill="#d6be8f"/><circle cx="284" cy="45" r="4" fill="#354752"/>
+            <path d="M44 85v22m-7-11h14M302 215v12m-6-6h12" stroke="#dfc899" stroke-opacity=".7" stroke-width="1.3" stroke-linecap="round"/>
+            <circle cx="62" cy="177" r="2" fill="#e3c285" fill-opacity=".6"/><circle cx="314" cy="81" r="2" fill="#e3c285" fill-opacity=".6"/>
+          </svg>
+          <span class="art-caption">Find your rhythm</span>
+        </div>
+      </div>
+      <p class="home-footnote">Five songs <span aria-hidden="true"></span> Your own pace <span aria-hidden="true"></span> Endless sing-alongs</p>
+    </section>
+    <section id="playlist-view" class="page-scroll playlist-page" aria-labelledby="playlist-heading" hidden>
+      <div class="page-intro"><div><p class="eyebrow">The collection</p><h1 id="playlist-heading" tabindex="-1">Pick your song.</h1></div><span class="song-count">05 songs</span></div>
+      <p class="playlist-description">Fresh favourites and timeless classics.<br>Which one are you singing today?</p>
+      <ol class="song-list">
+        <li><button class="song-card" type="button" data-song="kalyani">
+          <span class="song-art kalyani" aria-hidden="true"><span class="art-letter" lang="kn">ಕ</span></span>
+          <span><span class="song-number">01</span><span class="card-title">Kalyani</span><span class="card-language">Kannada lyrics</span><span class="card-version">Karaoke + original</span></span>
+          <svg class="card-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+        </button></li>
+        <li><button class="song-card" type="button" data-song="mere-sapno">
+          <span class="song-art mere" aria-hidden="true"><span class="art-letter">M</span></span>
+          <span><span class="song-number">02</span><span class="card-title">Mere Sapno Ki Rani</span><span class="card-language">Hindi lyrics</span><span class="card-version">Karaoke</span></span>
+          <svg class="card-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+        </button></li>
+        <li><button class="song-card" type="button" data-song="o-jane-jana">
+          <span class="song-art jane" aria-hidden="true"><span class="art-letter">O</span></span>
+          <span><span class="song-number">03</span><span class="card-title">O Jane Jana</span><span class="card-language">Hindi lyrics</span><span class="card-version">Karaoke</span></span>
+          <svg class="card-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+        </button></li>
+        <li><button class="song-card" type="button" data-song="aa-aa-aye">
+          <span class="song-art aa" aria-hidden="true"><span class="art-letter">A</span></span>
+          <span><span class="song-number">04</span><span class="card-title">Aa Aa Aye</span><span class="card-language">Mera Dil Na Todo</span><span class="card-version">Karaoke · Roman letters</span></span>
+          <svg class="card-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+        </button></li>
+        <li><button class="song-card" type="button" data-song="manasilayo">
+          <span class="song-art manasilayo" aria-hidden="true"><span class="art-letter" lang="kn">ಮ</span></span>
+          <span><span class="song-number">05</span><span class="card-title">Manasilayo</span><span class="card-language">Kannada lyrics</span><span class="card-version">Karaoke + original</span></span>
+          <svg class="card-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+        </button></li>
+      </ol>
+      <p class="playlist-note">Read at your own pace.<br>The music keeps going while you scroll.</p>
+    </section>
+    <section id="song-view" class="song-view" aria-labelledby="song-heading" hidden>
+      <header class="song-header">
+        <div class="song-kicker"><span id="song-language">Kannada lyrics</span><button class="back-link" type="button" data-route="playlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg>All songs</button></div>
+        <div class="song-heading-row"><h1 id="song-heading" lang="kn" tabindex="-1">ಕಲ್ಯಾಣಿ</h1><div class="text-size" role="group" aria-label="Lyric text size"><button class="icon-button size-button" id="smaller" type="button" aria-label="Smaller lyrics">A−</button><button class="icon-button size-button" id="larger" type="button" aria-label="Larger lyrics">A+</button></div></div>
+        <p id="song-subtitle">Scroll at your own pace. Keep the music going.</p>
+      </header>
+      <div class="lyric-scroll" id="reader-kalyani" tabindex="0" lang="kn" aria-label="Kalyani lyrics, scroll to read"><div class="lyric-copy" lang="kn"><div class="stanza"><p class="lyric-line" data-line="1">ಅವಳುಡೆ ಕರಿಮಷಿ ಮಿಳಿ ಉಂಡಲ್ಲೋ</p><p class="lyric-line" data-line="2">ಮಿಳಿಗಳಿಲ್ ನಿರಯುನ್ನ ಮೊಳಿಯುಂಡಲ್ಲೋ</p><p class="lyric-line" data-line="3">ಮರುಪಡಿ ಪರಯುವಾನ್ ಮಡಿಯುಂಡಲ್ಲೋ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="4">ನಿಂಡೆ ನುಣಕ್ಕುಳಿ ಕಂಡಪ್ಪೋ</p><p class="lyric-line" data-line="5">ಅಡಿವಯಟ್ಟಿಲು ಮಂಜುಳ್ಳ ರಾತ್ರಿ</p><p class="lyric-line" data-line="6">ನಿಂಡೆ ಚಿರಿ ಅದು ಕಂಡಪ್ಪೋ</p><p class="lyric-line" data-line="7">ಅಯ್ಯಯ್ಯೋ ನೆಂಜಿಲೊರು ಆಧಿ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="8">ಕರಿಮಿಳಿಯುಳ್ಳ ಕಳವಾಣಿ</p><p class="lyric-line" data-line="9">ಕಾರ್-ಕೂಂತಲು ಕಂಡಪ್ಪೋಳ್ ಕಣ್ಣೊನ್ನು ಉಡಕ್ಕಿ</p><p class="lyric-line" data-line="10">ಚಿರಿಕ್ಕಲ್ಲೇ ಪೆಣ್ಣೇ ಕಲ್ಯಾಣಿ</p><p class="lyric-line" data-line="11">ನಿಂಡೆ ಮಾರತ್ತೆ ಪುಳ್ಳಿಯಿಲ್</p><p class="lyric-line" data-line="12">ಎನ್ನೆ ನೀ ಕುಡುಕ್ಕಿ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="13">ನಿಂಡೆ ಕಣ್ಣಿಲೆ ನಿರಂ ಕಂಡ್</p><p class="lyric-line" data-line="14">ಕಯ್ಯಿಲೆ ವಳ ಕಂಡ್</p><p class="lyric-line" data-line="15">ಕಾಲಿಲೆ ಕೊಲುಸಿಟ್ಟು</p><p class="lyric-line" data-line="16">ಎನ್ನೆ ನೀ ಕುಡುಕ್ಕಿ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="17">ಅರಯಿಲೆ ಅರಞ್ಞಾಣಂ ಅರಕ್ಕೆಟ್ಟಿಲ್ ಕಿಡಕ್ಕುಂಬೋ</p><p class="lyric-line" data-line="18">ಎನಿಕ್ಕೆಂಡೆ ಮೋಹಂಗಳ್ ಅಣಪೊಟ್ಟಿ ಒಳುಕುಂಬೋ</p><p class="lyric-line" data-line="19">ನೋಕ್ಕಲ್ಲೇ ನೀ ಒರುತ್ತಿ</p><p class="lyric-line" data-line="20">ನೋಟ್ಟತ್ತಿನ್ ಮುನಕೊಂಡ್ ಚಂಕತ್ ಪೆಡಯ್ಕ್ಕಣ್</p><p class="lyric-line" data-line="21">ನೋಕ್ಕಲ್ಲೇ ನೀ ಒರುತ್ತಿ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="22">ಇಡಿಮಿನ್ನಲಾಡಿ ನಿನಕ್ಕೆಂತಾ ಪೇಡಿ</p><p class="lyric-line" data-line="23">ಕತಕ್ ಅಡಚ್ಚೋಡಿ ಅಡುತ್ತು ನೀ ವಾಡಿ</p><p class="lyric-line" data-line="24">ಕವಿತಕಳ್ ಪಾಡಿ ಅರಕ್ಕೆಟ್ಟು ತೇಡಿ</p><p class="lyric-line" data-line="25">ನಿನ್ ಮುಡಿಯಿಲೆ ಸುಗಂಧತ್ತಿನ್ ರಾಮಚ್ಚಂ ತೇಡಿ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="26">ಞರಂಬುಗಳಿಲೆ ಚುಡು ಚೋರ ಒಳುಕುನ್ನು</p><p class="lyric-line" data-line="27">ಪರಮಾನಂತರ ಸುಖಮತ್ ತೇಡುನ್ನು</p><p class="lyric-line" data-line="28">ಮೋಹಂಗಳ್ ಕವಿತಕಳಾಕುನ್ನು</p><p class="lyric-line" data-line="29">ಉಳ್ಳೊನ್ನು ಅರಿಯಾನ್ ಇಡನೆಂಜು ಪಿಡಕ್ಕುನ್ನು</p></div>
+<div class="stanza"><p class="lyric-line" data-line="30">ಕಣ್ಣಾಡಿ ಮಿನ್ನುನ್ನ ವೆಳ್ಳಾರಂ ಕಣ್ಣುಳ್ಳ</p><p class="lyric-line" data-line="31">ಚೇಲೊತ್ತ ಮೆಯ್ಯುಳ್ಳ ಪೆಣ್ಣೇ ಅಲಂಕಾರಿ</p><p class="lyric-line" data-line="32">ಮುಟ್ಟೋಳಂ ಮುಡಿಯುಳ್ಳ ಕಾಣಾನ್ ಅಳಕುಳ್ಳ</p><p class="lyric-line" data-line="33">ನೀಲ ಮಿಳಿಯುಳ್ಳ ಪೆಣ್ಣೇ ನೀ ಶೃಂಗಾರಿ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="34">ಕರಿಮಿಳಿಯುಳ್ಳ ಕಳವಾಣಿ</p><p class="lyric-line" data-line="35">ಕಾರ್-ಕೂಂತಲು ಕಂಡಪ್ಪೋಳ್</p></div>
+<div class="stanza"><p class="lyric-line" data-line="36">ಕರಿಮಿಳಿಯುಳ್ಳ ಕಳವಾಣಿ</p><p class="lyric-line" data-line="37">ಕಾರ್-ಕೂಂತಲು ಕಂಡಪ್ಪೋಳ್ ಕಣ್ಣೊನ್ನು ಉಡಕ್ಕಿ</p><p class="lyric-line" data-line="38">ಚಿರಿಕ್ಕಲ್ಲೇ ಪೆಣ್ಣೇ ಕಲ್ಯಾಣಿ</p><p class="lyric-line" data-line="39">ನಿಂಡೆ ಮಾರತ್ತೆ ಪುಳ್ಳಿಯಿಲ್</p><p class="lyric-line" data-line="40">ಎನ್ನೆ ನೀ ಕುಡುಕ್ಕಿ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="41">ನಿಂಡೆ ಕಣ್ಣಿಲೆ ನಿರಂ ಕಂಡ್</p><p class="lyric-line" data-line="42">ಕಯ್ಯಿಲೆ ವಳ ಕಂಡ್</p><p class="lyric-line" data-line="43">ಕಾಲಿಲೆ ಕೊಲುಸಿಟ್ಟು</p><p class="lyric-line" data-line="44">ಎನ್ನೆ ನೀ ಕುಡುಕ್ಕಿ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="45">ಅರಯಿಲೆ ಅರಞ್ಞಾಣಂ</p><p class="lyric-line" data-line="46">ಅರಕ್ಕೆಟ್ಟಿಲ್ ಕಿಡಕ್ಕುಂಬೋ</p><p class="lyric-line" data-line="47">ಎನಿಕ್ಕೆಂಡೆ ಮೋಹಂಗಳ್</p><p class="lyric-line" data-line="48">ಆಣಪೊಟ್ಟಿ ಒಳುಕುಂಬೋ</p><p class="lyric-line" data-line="49">ನೋಕ್ಕಲ್ಲೇ ನೀ ಒರುತ್ತಿ</p><p class="lyric-line" data-line="50">ನೋಟ್ಟತ್ತಿನ್ ಮುನಕೊಂಡ್</p><p class="lyric-line" data-line="51">ಚಂಕತ್ ಪೆಡಯ್ಕ್ಕಣ್</p><p class="lyric-line" data-line="52">ನೋಕ್ಕಲ್ಲೇ ನೀ ಒರುತ್ತಿ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="53">ನಿಂಡೆ ನುಣಕ್ಕುಳಿ ಕಂಡಪ್ಪೋ</p><p class="lyric-line" data-line="54">ನಿಂಡೆ ನುಣಕ್ಕುಳಿ ಕಂಡಪ್ಪೋ</p><p class="lyric-line" data-line="55">ನಿಂಡೆ ನುಣಕ್ಕುಳಿ ಕಂಡಪ್ಪೋ</p><p class="lyric-line" data-line="56">ಅಡಿವಯಟ್ಟಿಲು ಮಂಜುಳ್ಳ ರಾತ್ರಿ</p><p class="lyric-line" data-line="57">ನಿಂಡೆ ಚಿರಿ ಅದು ಕಂಡಪ್ಪೋಳ್</p></div>
+<div class="stanza"><p class="lyric-line" data-line="58">ಕಡಕ್ಕಣ್ಣು ಕೊಂಡು ಮುರಿಞ್ಞಾಲ್</p><p class="lyric-line" data-line="59">ನಿಂಡೆ ಕರಳಿಲೆ ಪ್ರಿಯಂ ಕೊಂಡು ನಿರಞ್ಞಾಲ್ ಅರಿಯಾಂ</p><p class="lyric-line" data-line="60">ಕರಿಂಕಳ್ಳಿ ನಿನ್ನೆ ಅರಿಯಾನ್</p><p class="lyric-line" data-line="61">ನಿಂಡೆ ಕನವಿಲೆ ಮೋಹಂಗಳ್ ಅರಿಯಾಂ ಪರಯಾಂ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="62">ಇಟ್ಟಾ ಪೊಟ್ಟುಂ ಮತ್ತಾಪ್ಪಲ್ಲೇ ಚಿರಿಯತಿಲ್</p><p class="lyric-line" data-line="63">ವಟ್ಟ ಪೊಟ್ಟಾ ಕೆಟ್ಟಾ ಕೆಟ್ಟಿ ಮುಡಿಯಿಲ್</p><p class="lyric-line" data-line="64">ತಟ್ಟಾ ಮುಟ್ಟಾ ಕಳ್ಳಿ ಪೆಣ್ಣೇ ಉರುಕುತ್</p><p class="lyric-line" data-line="65">ವಿರುಮಾಂಡಿ ನೀ ಮಸರಾಟ್ಟಿ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="66">ನಿಂಡೆ ಕಡಕ್ಕಣ್ಣಿನ್ ಮುನಯೋ?</p><p class="lyric-line" data-line="67">ಕರುಂಬಿ ನಿಂಡೆ ಮಿಳಿಯೋ?</p><p class="lyric-line" data-line="68">ನಿಂಡೆ ಕರಳಿಲೆ ಪ್ರಿಯಮೋ?</p><p class="lyric-line" data-line="69">ನೀ ಎನಿಕ್ಕೆಕಿಯ ಸುಂದರ ರಾತ್ರಿಯೋ?</p></div>
+<div class="stanza"><p class="lyric-line" data-line="70">ಸುಂದರಿ ಪೆಣ್ಣೇ ನಿನ್ನೆ</p><p class="lyric-line" data-line="71">ಕಂಡಪ್ಪೋಳ್ ತೊಟ್ಟೆ ಎಂಡೆ</p><p class="lyric-line" data-line="72">ಚಂಕಿಲು ತೀಯೇ ನಿಂಡೆ</p><p class="lyric-line" data-line="73">ಚುಂಡಿಲು ತೇನೋ ಮಧುರ ಮನೋಹರಿ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="74">ಪಾಡತ್ತೆ ಚೇಲುಳ್ಳ ಪಾಲಪ್ಪೂ ಪೋಲುಳ್ಳ</p><p class="lyric-line" data-line="75">ಪುಂಚಿರಿ ಕಂಡೆಂಡೆ ಉಳ್ಳೊನ್ನು ಕಾಳಿ</p><p class="lyric-line" data-line="76">ಚೆಂಚೋರ ಚುಂಡತ್ತು ಚೇಲುಳ್ಳ ಚಾಯತ್ತೆ</p><p class="lyric-line" data-line="77">ಕೊಂಡೆನ್ನರಿಞ್ಞಪ್ಪೋಳ್ ನೆಂಜಕಂ ಪಾಳಿ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="78">ಕರಿಮಿಳಿಯುಳ್ಳ ಕಳವಾಣಿ</p><p class="lyric-line" data-line="79">ಕಾರ್-ಕೂಂತಲು ಕಂಡಪ್ಪೋ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="80">ಕರಿಮಿಳಿಯುಳ್ಳ ಕಳವಾಣಿ</p><p class="lyric-line" data-line="81">ಕಾರ್-ಕೂಂತಲು ಕಂಡಪ್ಪೋಳ್ ಕಣ್ಣೊನ್ನು ಉಡಕ್ಕಿ</p><p class="lyric-line" data-line="82">ಚಿರಿಕ್ಕಲ್ಲೇ ಪೆಣ್ಣೇ ಕಲ್ಯಾಣಿ</p><p class="lyric-line" data-line="83">ನಿಂಡೆ ಮಾರತ್ತೆ ಪುಳ್ಳಿಯಿಲ್</p><p class="lyric-line" data-line="84">ಎನ್ನೆ ನೀ ಕುಡುಕ್ಕಿ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="85">ಕರಿಮಿಳಿಯುಳ್ಳ ಕಳವಾಣಿ (ಕಳವಾಣಿ)</p><p class="lyric-line" data-line="86">ಚಿರಿಕ್ಕಲ್ಲೇ ಪೆಣ್ಣೇ ಕಲ್ಯಾಣಿ (ಕಲ್ಯಾಣಿ)</p></div><div class="end-mark" aria-hidden="true"></div></div></div>
+      <div class="lyric-scroll" id="reader-mere-sapno" tabindex="0" lang="hi" aria-label="Mere Sapno Ki Rani lyrics, scroll to read" hidden><div class="lyric-copy" lang="hi"><div class="stanza"><p class="lyric-line" data-line="1">हो हे हे हे हा हा</p></div>
+<div class="stanza"><p class="lyric-line" data-line="2">मेरे सपनों की रानी कब आयेगी तू</p><p class="lyric-line" data-line="3">आई रुत मस्तानी कब आयेगी तू</p><p class="lyric-line" data-line="4">बीती जाये जिंदगानी कब आयेगी तू</p><p class="lyric-line" data-line="5">चली आ तू चली आ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="6">मेरे सपनों की रानी कब आयेगी तू</p><p class="lyric-line" data-line="7">आई रुत मस्तानी कब आयेगी तू</p><p class="lyric-line" data-line="8">बीती जाये जिंदगानी कब आयेगी तू</p><p class="lyric-line" data-line="9">चली आ आ तू चली आ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="10">प्यार की गलियाँ</p><p class="lyric-line" data-line="11">बागों की कलियाँ</p><p class="lyric-line" data-line="12">सब रंगरलियाँ पूछ रहीं हैं</p><p class="lyric-line" data-line="13">प्यार की गलियाँ बागों की कलियाँ</p><p class="lyric-line" data-line="14">सब रंगरलियाँ पूछ रहीं हैं</p><p class="lyric-line" data-line="15">गीत पनघट पे किस दिन गायेगी तू</p></div>
+<div class="stanza"><p class="lyric-line" data-line="16">मेरे सपनों की रानी कब आयेगी तू</p><p class="lyric-line" data-line="17">आई रुत मस्तानी कब आयेगी तू</p><p class="lyric-line" data-line="18">बीती जाये जिंदगानी कब आयेगी तू</p><p class="lyric-line" data-line="19">चली आ तू चली आ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="20">फूल सी खिल के</p><p class="lyric-line" data-line="21">पास आ दिल के</p><p class="lyric-line" data-line="22">दूर से मिल के चैन ना आये</p><p class="lyric-line" data-line="23">फूल सी खिल के पास आ दिल के</p><p class="lyric-line" data-line="24">दूर से मिल के चैन ना आये</p><p class="lyric-line" data-line="25">और कब तक मुझे तड़पायेगी तू</p></div>
+<div class="stanza"><p class="lyric-line" data-line="26">मेरे सपनों की रानी कब आयेगी तू</p><p class="lyric-line" data-line="27">आई रुत मस्तानी कब आयेगी तू</p><p class="lyric-line" data-line="28">बीती जाये जिंदगानी कब आयेगी तू</p><p class="lyric-line" data-line="29">चली आ तू चली आ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="30">क्या है भरोसा</p><p class="lyric-line" data-line="31">आशिक़ दिल का</p><p class="lyric-line" data-line="32">और किसी पे ये आ जाये</p><p class="lyric-line" data-line="33">क्या है भरोसा आशिक़ दिल का</p><p class="lyric-line" data-line="34">और किसी पे ये आ जाये</p><p class="lyric-line" data-line="35">आ गया तो बहुत पछतायेगी तू</p></div>
+<div class="stanza"><p class="lyric-line" data-line="36">मेरे सपनों की रानी कब आयेगी तू</p><p class="lyric-line" data-line="37">आई रुत मस्तानी कब आयेगी तू</p><p class="lyric-line" data-line="38">बीती जाये ज़िंदगानी कब आयेगी तू</p><p class="lyric-line" data-line="39">चली आ आ तू चली आ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="40">मेरे सपनों की रानी कब आएगी तू</p><p class="lyric-line" data-line="41">आई रुत मस्तानी कब आएगी तू</p><p class="lyric-line" data-line="42">बीती जाए जिंदगानी कब आएगी तू</p><p class="lyric-line" data-line="43">चली आ आ तू चली आ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="44">चली आ तू चली आ</p><p class="lyric-line" data-line="45">चली आ आ तू चली आ</p></div><div class="end-mark" aria-hidden="true"></div></div></div>
+      <div class="lyric-scroll" id="reader-o-jane-jana" tabindex="0" lang="hi" aria-label="O Jane Jana lyrics, scroll to read" hidden><div class="lyric-copy" lang="hi"><div class="stanza"><p class="lyric-line" data-line="1">I love you all</p></div>
+<div class="stanza"><p class="lyric-line" data-line="2">दोस्तों ना कोई मंजिल है</p><p class="lyric-line" data-line="3">ना कोई साथी है</p><p class="lyric-line" data-line="4">फिर भी निकल पड़ा हूँ घर से</p><p class="lyric-line" data-line="5">शायद वही साथी है वही मंजिल है</p></div>
+<div class="stanza"><p class="lyric-line" data-line="6">ओ ओ जाने जाना</p><p class="lyric-line" data-line="7">ढूंढें तुझे दीवाना</p><p class="lyric-line" data-line="8">सपनो में रोज आये</p><p class="lyric-line" data-line="9">आ जिन्दगी में आना</p></div>
+<div class="stanza"><p class="lyric-line" data-line="10">ओ ओ जाने जाना</p><p class="lyric-line" data-line="11">ढूंढें तुझे दीवाना</p><p class="lyric-line" data-line="12">सपनो में रोज आये</p><p class="lyric-line" data-line="13">आ जिन्दगी में आना सनम..</p></div>
+<div class="stanza"><p class="lyric-line" data-line="14">मेरे ख्वाब मेरे खयालों की रानी</p><p class="lyric-line" data-line="15">किसी दिन बनेगी हमारी कहानी</p><p class="lyric-line" data-line="16">मेरे ख्वाब मेरे खयालों की रानी</p><p class="lyric-line" data-line="17">किसी दिन बनेगी हमारी कहानी</p></div>
+<div class="stanza"><p class="lyric-line" data-line="18">ऐ मेरी बेखुदी</p><p class="lyric-line" data-line="19">ये कसम मैंने ली</p><p class="lyric-line" data-line="20">प्यार में एक दिन</p><p class="lyric-line" data-line="21">मेरी जान तुझे है पाना</p></div>
+<div class="stanza"><p class="lyric-line" data-line="22">सपनो में रोज आये</p><p class="lyric-line" data-line="23">आ जिन्दगी में आना</p></div>
+<div class="stanza"><p class="lyric-line" data-line="24">ओ ओ जाने जाना</p><p class="lyric-line" data-line="25">ढूंढें तुझे दीवाना</p><p class="lyric-line" data-line="26">सपनो में रोज आये</p><p class="lyric-line" data-line="27">आ जिन्दगी में आना सनम</p></div>
+<div class="stanza"><p class="lyric-line" data-line="28">किसी खूबसूरत परी जैसी होगी</p><p class="lyric-line" data-line="29">मुझे क्या पता दिलरुबा कैसी होगी</p><p class="lyric-line" data-line="30">किसी खूबसूरत परी जैसी होगी</p><p class="lyric-line" data-line="31">मुझे क्या पता दिलरुबा कैसी होगी</p></div>
+<div class="stanza"><p class="lyric-line" data-line="32">सोचता हूँ तुझे</p><p class="lyric-line" data-line="33">चाहता हूँ तुझे</p><p class="lyric-line" data-line="34">दिल मेरा कह रहा</p><p class="lyric-line" data-line="35">सारे फासले मिटाना</p></div>
+<div class="stanza"><p class="lyric-line" data-line="36">ओ ओ जाने जाना</p><p class="lyric-line" data-line="37">ढूंढें तुझे दीवाना</p><p class="lyric-line" data-line="38">सपनो में रोज आये</p><p class="lyric-line" data-line="39">आ जिन्दगी में आना..</p></div>
+<div class="stanza"><p class="lyric-line" data-line="40">ओ ओ जाने जाना</p><p class="lyric-line" data-line="41">ढूंढें तुझे दीवाना</p><p class="lyric-line" data-line="42">सपनो में रोज आये</p><p class="lyric-line" data-line="43">आ जिन्दगी में आना.सनम</p></div><div class="end-mark" aria-hidden="true"></div></div></div>
+      <div class="lyric-scroll" id="reader-aa-aa-aye" tabindex="0" lang="hi-Latn" aria-label="Aa Aa Aye lyrics, scroll to read" hidden><div class="lyric-copy" lang="hi-Latn"><div class="stanza"><p class="lyric-line" data-line="1">A Aa Ee U U U Mera Dil Na Todo</p><p class="lyric-line" data-line="2">A Aa Ee U U U Mera Dil Na Todo</p></div>
+<div class="stanza"><p class="lyric-line" data-line="3">Ruthake Na Ja O Meri Jaan, Paas Mere Aa O Meri Jaan</p><p class="lyric-line" data-line="4">Main Angutha Chhaap Padhana Aur Likhana Jaanu Na</p></div>
+<div class="stanza"><p class="lyric-line" data-line="5">A Aa Ee U U U Isaka Dil Na Todo</p><p class="lyric-line" data-line="6">A Aa Ee U U U Mera Dil Na Todo</p></div>
+<div class="stanza"><p class="lyric-line" data-line="7">Faisala Maine Koiya Na Aise Pichha Chhodunga</p><p class="lyric-line" data-line="8">Hai Yahi Meri Tamanna, Dil Se Dil Main Jodunga</p><p class="lyric-line" data-line="9">Faisala Maine Koiya Na Aise Pichha Chhodunga</p><p class="lyric-line" data-line="10">Hai Yahi Meri Tamanna, Dil Se Dil Main Jodunga</p></div>
+<div class="stanza"><p class="lyric-line" data-line="11">Main Hu Anaadi Kuchh Toh Sikha De</p><p class="lyric-line" data-line="12">Mujhako Bhi Apane Jaisa Bana De</p><p class="lyric-line" data-line="13">Na Sunu Koyi Bahaana, Baat Koyi Maanu Na</p></div>
+<div class="stanza"><p class="lyric-line" data-line="14">A Aa Ee U U U Isaka Dil Na Todo</p><p class="lyric-line" data-line="15">A Aa Ee U U U Mera Dil Na Todo</p></div>
+<div class="stanza"><p class="lyric-line" data-line="16">Aa Saja Du Main Bahaar-E-Jaan Tere Baalo Mein</p><p class="lyric-line" data-line="17">Rang Honto Ka Laga Du Tere Gore Gaalo Mein</p><p class="lyric-line" data-line="18">Aa Saja Du Main Bahaar-E-Jaan Tere Baalo Mein</p><p class="lyric-line" data-line="19">Rang Honto Ka Laga Du Tere Gore Gaalo Mein</p></div>
+<div class="stanza"><p class="lyric-line" data-line="20">Main Tera Raaja Tu Meri Raani, Tujhase Banegi Meri Kahaani</p><p class="lyric-line" data-line="21">Main Siva Tere Kisi Bhi Aur Ko Pehchaanu Na</p></div>
+<div class="stanza"><p class="lyric-line" data-line="22">A Aa Ee U U U Isaka Dil Na Todo</p><p class="lyric-line" data-line="23">A Aa Ee U U U Mera Dil Na Todo</p></div>
+<div class="stanza"><p class="lyric-line" data-line="24">Ruthake Na Ja O Meri Jaan, Paas Mere Aa O Meri Jaan</p><p class="lyric-line" data-line="25">Main Angutha Chhaap Padhana Aur Likhana Jaanu Na</p></div>
+<div class="stanza"><p class="lyric-line" data-line="26">A Aa Ee U U U Isaka Dil Na Todo</p><p class="lyric-line" data-line="27">A Aa Ee U U U Mera Dil Na Todo</p></div><div class="end-mark" aria-hidden="true"></div></div></div>
+      <div class="lyric-scroll" id="reader-manasilayo" tabindex="0" lang="kn" aria-label="Manasilayo lyrics in Kannada script, scroll to read" hidden><div class="lyric-copy" lang="kn"><div class="stanza"><p class="lyric-line" data-line="1">ತಿರಿಚ್ಚಿ ವನ್ನಲ್ಲೇ ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="2">ತಿರುತ್ತಿ ವೈಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ ತಿಟ್ಟಂ ಉಂಡಲ್ಲೇ</p><p class="lyric-line" data-line="3">ಚೇಟ್ಟನ್ ವನ್ನಲ್ಲೇ, ಸೇಟ್ಟ ಚೆಯ್ಯಾ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="4">ಪೇಟ್ಟ ತುಳ್ಳಾನ್ ವನ್ನಲ್ಲೇ, ವೇಟ್ಟಯನಲ್ಲೇ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="5">ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ (ಮನಸ್ಸಿಲಾಯೋ), ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="6">ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ, ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="7">ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ (ಮನಸ್ಸಿಲಾಯೋ), ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="8">ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ, ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="9">ಪೆರಟ್ಟಿ ಪಟ್ಟ ಎಡು ನೊರುಂಗನುಮ್ಡಾ ಮೋನೇ</p><p class="lyric-line" data-line="10">ಉರುಮ್ಮಿ ಒಡೈಯನುಂ ಎರಂಗಿ ವಾಣ್ಣೇ</p><p class="lyric-line" data-line="11">ಮುಡಿಯ ಕಲಚ್ಚುವುಟ್ಟು ನೀ ನಡಂದು ಪೋನಾ</p><p class="lyric-line" data-line="12">ನೆರಂಬು ಪೊಡಚ್ಚುಗಿದೇ ಕೊಳುತ್ತಣುಂ ವಾಣ್ಣಾ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="13">ಹೇ ರಾ-ರಾ ರಾಮೈಯ್ಯಾ</p><p class="lyric-line" data-line="14">ನೀ ರಾಂಗಾ ಪಾರ್ತ್ತಾ ಸೇದಾರಮ್ದಾನ್</p><p class="lyric-line" data-line="15">ಏಯ್ ರಾ-ರಾ ರಾಕ್ಕಾಮ್ಮಾ</p><p class="lyric-line" data-line="16">ಅಣ್ಣನ್ ಸೊಡಕ್ಕು ಪೋಟ್ಟಾ ಸಂಬವಮ್ದಾನ್</p></div>
+<div class="stanza"><p class="lyric-line" data-line="17">ಅಡಿ-ಅಡಿ-ಅಡಿ-ಅಡಿ-ಅಡಿ ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="18">ಉಣ್ಮ ಸೊನ್ನಾ ಮನಸ್ಸಿಲಾಯೋ</p><p class="lyric-line" data-line="19">ಅಡಿ-ಅಡಿ-ಅಡಿ-ಅಡಿ-ಅಡಿ ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="20">ಒಣ್ಣಾ ನಿನ್ನಾ ಮನಸ್ಸಿಲಾಯೋ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="21">ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ (ಮನಸ್ಸಿಲಾಯೋ), ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="22">ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ, ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="23">ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ (ಮನಸ್ಸಿಲಾಯೋ), ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="24">ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ, ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="25">ತಿರಿಚ್ಚಿ ವನ್ನಲ್ಲೇ ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="26">ತಿರುತ್ತಿ ವೈಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ ತಿಟ್ಟಂ ಉಂಡಲ್ಲೇ</p><p class="lyric-line" data-line="27">ಚೇಟ್ಟನ್ ವನ್ನಲ್ಲೇ, ಸೇಟ್ಟ ಚೆಯ್ಯಾ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="28">ಪೇಟ್ಟ ತುಳ್ಳಾನ್ ವನ್ನಲ್ಲೇ, ವೇಟ್ಟಯನಲ್ಲೇ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="29">ಕಣ್ಣಾ ಪಾಸ್ಟ್ ಇಸ್ ಪಾಸ್ಟು ಟೈಮ್ ರೊಂಬ ಫಾಸ್ಟು</p><p class="lyric-line" data-line="30">ವಿಟ್ಟಾ ಸಿಕ್ಕಾದುಡಾ</p><p class="lyric-line" data-line="31">ಕಡವುಳ್ ಪೇರಿಲ್ ಕಲವರಂ ನೂರಿಲ್</p><p class="lyric-line" data-line="32">ಪಡಚ್ಚವನ್ ಓರ್ ಆಳುಡಾ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="33">ಲೈಫ್ ಒರು ವಾಟ್ಟಿಮಾ ಲವ್ ಯೋರ್ ಡ್ಯೂಟಿಮಾ</p><p class="lyric-line" data-line="34">ಅದಿಲ್ ಅವನ್ಕೂಡ ಇವನ್ಕೂಡ ವೈ ಪೋಟ್ಟಿಮಾ?</p><p class="lyric-line" data-line="35">ನೀ ಉನಕ್ಕಾ ನಿಲ್ಲು ಊರ್ ಕೆಡಕ್ಕುಂ ತಳ್ಳು</p><p class="lyric-line" data-line="36">ನೀ ನಿರಂ ವಿಟ್ಟು ಮನಂ ಪಾರ್ತ್ತಾ ವಂಡರ್ಫುಲ್ಲು</p></div>
+<div class="stanza"><p class="lyric-line" data-line="37">ಹೇ... ಹೇ ರಾ-ರಾ ರಾಮೈಯಾ</p><p class="lyric-line" data-line="38">ನೀ ರಾಂಗಾ ಪಾರ್ತ್ತಾ ಸೇದಾರಮ್ದಾನ್</p><p class="lyric-line" data-line="39">ಏಯ್ ರಾ-ರಾ, ರಾ-ರಾ ರಾಕ್ಕಾಮ್ಮಾ</p><p class="lyric-line" data-line="40">ಅಣ್ಣನ್ ಸೊಡಕ್ಕು ಪೋಟ್ಟಾ ಸಂಬವಮ್ದಾನ್</p></div>
+<div class="stanza"><p class="lyric-line" data-line="41">ಅಡಿ-ಅಡಿ-ಅಡಿ-ಅಡಿ-ಅಡಿ ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="42">ಉಣ್ಮ ಸೊನ್ನಾ ಮನಸ್ಸಿಲಾಯೋ</p><p class="lyric-line" data-line="43">ಅಡಿ-ಅಡಿ-ಅಡಿ-ಅಡಿ-ಅಡಿ ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="44">ಒಣ್ಣಾ ನಿನ್ನಾ ಮನಸ್ಸಿಲಾಯೋ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="45">ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ (ಮನಸ್ಸಿಲಾಯೋ), ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="46">ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ, ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="47">ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ (ಮನಸ್ಸಿಲಾಯೋ), ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="48">ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ, ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="49">ಹೇ ಆರುಕ್ಕು ರೆಂಡರ ಕಲ್ಲರ ವೆಟ್ಟಿಕ್ಕಮಾ</p><p class="lyric-line" data-line="50">ಸಿಲ್ಲರ ಒಟ್ಟಿಕ್ಕಮಾ ನೆತ್ತಿಲಮಾ</p><p class="lyric-line" data-line="51">ಇಲ್ಲನಾ ಒತ್ತಿಕ್ಕಮಾ ತೊಟ್ಟಾ ಪತ್ತಿಕ್ಕುಮಾ</p><p class="lyric-line" data-line="52">ಓರಮಾ ಒತ್ತಿಕ್ಕಮಾ ತೊಟ್ಟಾ ಪತ್ತಿಕ್ಕುಮಾ ವನ್ಮಂ ಕಕ್ಕುರ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="53">ಮಕ್ಕರು-ಮಕ್ಕರು ಮುತ್ತುನ ತಟ್ಟುಲ ಪೊಟ್ಟಲಂ ಕಟ್ಟುನ ಮೂಡು ಕಣ್ಣಾ</p><p class="lyric-line" data-line="54">ಅಂಡರ್ ಕಟ್ಟುಲ ತಂಡರ್ರು ಕೊಂಡರು, ಹಂಟರ್ ವನ್ಟ್ಟಾರ್ ಚೂಡು ಕಣ್ಣಾ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="55">ಹಂಟರ್ ಸೂಡು ಕಣ್ಣಾ, ವನ್ಟ್ಟಾರು ಡೂಡು ಕಣ್ಣಾ, ಇಪ್ಪುಡು ಚೂಡು</p><p class="lyric-line" data-line="56">ಹಂಟರ್ ಸೂಡು ಕಣ್ಣಾ, ವನ್ಟ್ಟಾರು ಡೂಡು ಕಣ್ಣಾ, ಇಪ್ಪುಡು ಚೂಡು</p><p class="lyric-line" data-line="57">ಹಂಟರ್ ಸೂಡು ಕಣ್ಣಾ, ವನ್ಟ್ಟಾರು ಡೂಡು ಕಣ್ಣಾ, ಇಪ್ಪುಡು ಚೂಡು</p></div>
+<div class="stanza"><p class="lyric-line" data-line="58">ಅಡಿ-ಅಡಿ-ಅಡಿ-ಅಡಿ-ಅಡಿ ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="59">ಉಣ್ಮ ಸೊನ್ನಾ ಮನಸ್ಸಿಲಾಯೋ</p><p class="lyric-line" data-line="60">ಅಡಿ-ಅಡಿ-ಅಡಿ-ಅಡಿ-ಅಡಿ ಅಡಿಪೊಳಿಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="61">ಒಣ್ಣಾ ನಿನ್ನಾ ಮನಸ್ಸಿಲಾಯೋ</p></div>
+<div class="stanza"><p class="lyric-line" data-line="62">ತಿರಿಚ್ಚಿ ವನ್ನಲ್ಲೇ ತೆರಿಕ್ಕ ವಿಡಾನ್ ವನ್ನಲ್ಲೇ (ಮನಸ್ಸಿಲಾಯೋ)</p><p class="lyric-line" data-line="63">ತಿರುತ್ತಿ ವೈಕ್ಕಾನ್ ವನ್ನಲ್ಲೇ ತಿಟ್ಟಂ ಉಂಡಲ್ಲೇ</p><p class="lyric-line" data-line="64">ಚೇಟ್ಟನ್ ವನ್ನಲ್ಲೇ (ಮನಸ್ಸಿಲಾಯೋ), ಸೇಟ್ಟ ಚೆಯ್ಯಾ ವನ್ನಲ್ಲೇ</p><p class="lyric-line" data-line="65">ಪೇಟ್ಟ ತುಳ್ಳಾನ್ ವನ್ನಲ್ಲೇ, ವೇಟ್ಟಯನಲ್ಲೇ</p></div><div class="end-mark" aria-hidden="true"></div></div></div>
+    </section>
+  </div>
+  <footer class="player" id="player" aria-label="Music player" hidden>
+    <div class="player-topline">
+      <fieldset class="version-options" id="version-options">
+        <legend class="sr-only">Music version</legend>
+        <label class="version-option is-selected"><input type="radio" id="version-karaoke" name="version" value="karaoke" checked><span><strong>Karaoke</strong><small>Sing along</small></span></label>
+        <label class="version-option"><input type="radio" id="version-original" name="version" value="original"><span><strong>Original</strong><small>With vocals</small></span></label>
+      </fieldset>
+      <p id="version-note">Karaoke · Sing along</p>
+    </div>
+    <div class="song-row">
+      <button class="play-button" id="play" type="button" aria-label="Play music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 12 8-12 8z" fill="currentColor" stroke="none"/></svg></button>
+      <div class="song-details"><button class="now-playing-open" id="now-playing-open" type="button" aria-label="Open current song lyrics"><span class="song-title" id="song-title">Kalyani · Karaoke</span></button><div id="play-state" role="status">Tap play to start the song</div></div>
+      <button class="restart-button" id="restart" type="button" aria-label="Restart music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10a9 9 0 1 1 1 8M3 4v6h6"/></svg></button>
+    </div>
+    <div class="timeline"><span class="time" id="current-time">0:00</span><div class="seek-wrap"><label for="seek" class="sr-only">Song position</label><input id="seek" type="range" min="0" max="228.624" step="0.1" value="0" aria-valuetext="0 minutes, 0 seconds"></div><span class="time" id="total-time">3:49</span></div>
+    <div class="error" id="error" role="alert" hidden></div>
+  </footer>
+</main>
+<audio id="audio-karaoke" preload="metadata" playsinline src="assets/audio/kalyani-karaoke.mp3"></audio>
+<audio id="audio-original" preload="metadata" playsinline src="assets/audio/kalyani-original.mp3"></audio>
+<audio id="audio-mere-karaoke" preload="metadata" playsinline src="assets/audio/mere-sapno-ki-rani-karaoke.mp3"></audio>
+<audio id="audio-jane-karaoke" preload="metadata" playsinline src="assets/audio/o-jane-jana-karaoke.mp3"></audio>
+<audio id="audio-aa-karaoke" preload="metadata" playsinline src="assets/audio/aa-aa-aye-karaoke.mp3"></audio>
+<audio id="audio-manasilayo-karaoke" preload="metadata" playsinline src="assets/audio/manasilayo-karaoke.mp3"></audio>
+<audio id="audio-manasilayo-original" preload="metadata" playsinline src="assets/audio/manasilayo-original.mp3"></audio>
+<noscript>Enable JavaScript in your browser to use Raaga Room.</noscript>
+<script src="assets/player.js"></script>
+<!-- Font license: licenses/NotoSansKannada-OFL.txt -->
+<!-- Font license: licenses/NotoSans-OFL.txt -->
+</body>
+</html>

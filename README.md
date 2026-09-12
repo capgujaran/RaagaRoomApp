@@ -26,7 +26,15 @@ Kalyani and Manasilayo include **Karaoke / Original** radio buttons. Changing ve
 
 The app uses relative asset paths, so it works at a GitHub Pages project URL such as `https://capgujaran.github.io/RaagaRoomApp/`. No build step, framework, external font provider, or other remote service is required.
 
+Mere Sapno Ki Rani and O Jane Jana use 256 kbps web audio copies with the original duration, sample rate, and channels. The other audio files retain the uploaded versions.
+
 For a local preview, run `python3 -m http.server 8000` in this directory, then visit `http://localhost:8000`.
+
+## GitHub Pages setup
+
+In the repository, open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, select **main** and **/(root)**, then **Save**. No workflow file or build step is needed.
+
+After GitHub Pages finishes deploying, the expected share link is [https://capgujaran.github.io/RaagaRoomApp/](https://capgujaran.github.io/RaagaRoomApp/).
 
 ## Font attribution
 
